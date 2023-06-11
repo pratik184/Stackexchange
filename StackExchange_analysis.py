@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-
-
-
-# In[57]:
 
 
 import requests
@@ -60,14 +50,6 @@ for page_num in range(1, 6):
     for name, count in tag_data:
         print(f"Tag: {name}, Count: {count}")
 db.close()
-
-
-# In[59]:
-
-
-# !pip install powerbiclient
-
-
 # ### Analytics Code
 
 # In[62]:
@@ -87,22 +69,6 @@ cnx = mysql.connector.connect(**db_config)
 # Query the data from the MySQL table
 query = "SELECT name, count FROM tags_1"
 df = pd.read_sql(query, cnx)
-
-
-# In[63]:
-
-
-df.head()
-
-
-# In[ ]:
-
-
-
-
-
-# In[78]:
-
 
 import mysql.connector
 import pandas as pd
@@ -143,9 +109,6 @@ plt.show()
 
 fig = px.pie(df, values='Question Count', names='Tag Name', title='Total Questions Asked')
 fig.show()
-
-
-# In[ ]:
 
 
 
